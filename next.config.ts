@@ -5,8 +5,7 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   images: { unoptimized: true },
-  cacheComponents: true,
-  partialPrefetching: true,
+  // cacheComponents and partialPrefetching are left off: they enable PPR, which static export does not support.
   turbopack: {
     rules: {
       "*.css": {
