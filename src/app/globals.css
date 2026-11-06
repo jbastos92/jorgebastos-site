@@ -22,3 +22,20 @@ body {
   color: var(--foreground);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
+
+/* Markdown post body */
+.prose-post { line-height: 1.75; }
+.prose-post > * + * { margin-top: 1rem; }
+.prose-post h2 { font-size: 1.375rem; font-weight: 600; margin-top: 2rem; }
+.prose-post h3 { font-size: 1.125rem; font-weight: 600; margin-top: 1.5rem; }
+.prose-post a { text-decoration: underline; text-underline-offset: 4px; }
+.prose-post ul { list-style: disc; padding-left: 1.25rem; }
+.prose-post ol { list-style: decimal; padding-left: 1.25rem; }
+.prose-post code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+.prose-post :not(pre) > code { background: rgb(0 0 0 / 0.06); padding: 0.1rem 0.35rem; border-radius: 0.25rem; }
+.prose-post pre { background: #18181b; color: #f4f4f5; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; }
+.prose-post blockquote { border-left: 3px solid #a1a1aa; padding-left: 1rem; color: #52525b; }
+@media (prefers-color-scheme: dark) {
+  .prose-post :not(pre) > code { background: rgb(255 255 255 / 0.1); }
+  .prose-post blockquote { color: #a1a1aa; }
+}
