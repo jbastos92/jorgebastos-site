@@ -1,19 +1,47 @@
-export default function Home() {
+import Link from "next/link";
+import { profile } from "@/content/site";
+import { getAllPosts } from "@/lib/posts";
+
+export default function About() {
+  const latest = getAllPosts().slice(0, 3);
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center gap-4 px-6 py-24">
-      <h1 className="text-4xl font-semibold tracking-tight">Jorge Bastos</h1>
-      <p className="text-lg text-zinc-600 dark:text-zinc-400">
-        Full stack developer. This site is under construction: career and side
-        projects are coming soon.
-      </p>
-      <p>
-        <a
-          className="font-medium underline underline-offset-4"
-          href="https://github.com/jbastos92"
-        >
-          GitHub
-        </a>
-      </p>
-    </main>
+    <div className="flex flex-col gap-10">
+      <section className="flex flex-col gap-4">
+        <h1 className="text-4xl font-semibold tracking-tight">{profile.name}</h1>
+        <p className="text-lg text-zinc-600 dark:text-zinc-400">
+          {profile.role} · {profile.location}
+        </p>
+        {profile.about.map((p) => (
+          <p key={p} className="leading-7">
+            {p}
+          </p>
+        ))}
+        <ul className="flex gap-4">
+          {profile.links.map((l) => (
+            <li key={l.href}>
+              <a className="font-medium underline underline-offset-4" href={l.href}>
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {latest.length > 0 && (
+        <section className="flex flex-col gap-3">
+          <h2 className="text-xl font-semibold">Currently studying</h2>
+          <ul className="flex flex-col gap-2">
+            {latest.map((post) => (
+              <li key={post.slug}>
+                <Link href={`/posts/${post.slug}/`} className="underline underline-offset-4">
+                  {post.title}
+                </Link>{" "}
+                <span className="text-sm text-zinc-500">{post.date}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
   );
 }
