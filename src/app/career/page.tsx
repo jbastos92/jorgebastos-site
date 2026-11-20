@@ -16,6 +16,9 @@ export default function Career() {
               </h2>
               <span className="text-sm text-zinc-500">{job.period}</span>
             </div>
+            {job.client && (
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">Client: {job.client}</p>
+            )}
             <ul className="list-disc pl-5 leading-7 text-zinc-700 dark:text-zinc-300">
               {job.highlights.map((h) => (
                 <li key={h}>{h}</li>

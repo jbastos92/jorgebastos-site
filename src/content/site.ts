@@ -1,13 +1,12 @@
 // Site content. Edit this file to change the About, Career and Projects pages.
-// Entries marked "Example" are placeholders: replace them with real content.
 
 export const profile = {
   name: "Jorge Bastos",
   role: "Full Stack Developer",
   location: "Florianópolis, Brazil",
   about: [
-    "Example: I am a full stack developer based in Florianópolis, Brazil. Replace this paragraph with a short introduction: what you build, what you care about, and what you are looking for next.",
-    "Example: A second paragraph can cover your main stack and the kind of problems you enjoy solving.",
+    "I’m a software engineer with about ten years of experience, working across frontend and backend development. My most recent work was on e.CETESB, the online services platform of CETESB, São Paulo’s state environmental agency.",
+    "I helped build features and modules for Reclamações (complaints), Infrações (violations), and Inspeções (inspections). I built some of these modules end to end, across frontend and backend. I’m strengthening my system design skills and studying AI engineering, and I’m open to working with international teams.",
   ],
   links: [
     { label: "GitHub", href: "https://github.com/jbastos92" },
@@ -18,18 +17,22 @@ export const profile = {
 export type Job = {
   role: string;
   company: string;
+  client?: string;
   period: string;
   highlights: string[];
 };
 
 export const career: Job[] = [
   {
-    role: "Example: Full Stack Developer",
-    company: "Example Company",
-    period: "2022 – present",
+    role: "Full Stack Developer",
+    company: "Softplan",
+    client: "CETESB (São Paulo’s state environmental agency)",
+    period: "October 2020 – September 2026",
     highlights: [
-      "Example: one line on an outcome you delivered, with a number if you have one.",
-      "Example: one line on the stack or the team.",
+      "Contributed to e.CETESB, CETESB's online services platform.",
+      "Helped build features and modules for Reclamações (complaints), Infrações (violations), and Inspeções (inspections), some of them end to end, across frontend and backend. They were the most recent modules added to the platform.",
+      "From January 2026, I worked directly in the production environment, fixing frontend and backend bugs, monitoring the system, resolving database issues, and building on-demand features and new reports.",
+      "Stack: React and TypeScript on the frontend; Java and Spring Boot on the backend.",
     ],
   },
 ];
@@ -43,8 +46,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "jorgebastos-site",
-    description: "This website: a static Next.js site hosted on Cloudflare Pages, with Markdown posts.",
+    name: "e.CETESB",
+    description:
+      "I contributed features and modules to CETESB’s online services platform, including Reclamações (complaints), Infrações (violations), and Inspeções (inspections). I built some of these modules across frontend and backend.",
+    stack: ["React", "TypeScript", "Java", "Spring Boot"],
+    href: "https://e.cetesb.sp.gov.br/",
+  },
+  {
+    name: "Jorge Bastos personal website",
+    description: "My personal website presents my profile, career experience, projects, and learning notes.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudflare Pages"],
     href: "https://github.com/jbastos92/jorgebastos-site",
   },
